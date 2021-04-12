@@ -6,6 +6,6 @@
 
 git diff --name-only | while read filename;
 do
-  commit_sha=$(git log --pretty=format:"%H" $filename | head -n 1);
+  commit_sha=$(git log --pretty=format:"%H" "$filename" | head -n 1);
   git add "$filename" && git commit -m "fixup! $commit_sha"
 done
